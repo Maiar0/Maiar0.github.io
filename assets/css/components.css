@@ -34,3 +34,41 @@
     line-height: 1.5; /* Improve line spacing */
     margin-top: 0.5rem; /* Space between title and description */
 }
+
+/* Used in Project Break Down */
+.breakdown-item {
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 1rem; /* Add padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    margin-bottom: 1.5rem; /* Space between items */
+}
+
+/* Hover Effect for Breakdown Items */
+.breakdown-item:hover {
+    transform: translateY(-5px); /* Slightly lift the box */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Title Styling Inside Breakdown Items */
+.breakdown-item h3 a {
+    font-size: 1.25rem; /* Slightly larger font for title */
+    color: #007BFF; /* Blue text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.breakdown-item h3 a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Description Styling */
+.breakdown-item p {
+    font-size: 1rem; /* Standard text size */
+    color: #555; /* Slightly muted text for readability */
+    margin-top: 0.5rem; /* Space between title and description */
+    line-height: 1.5; /* Improve line spacing */
+}
+
