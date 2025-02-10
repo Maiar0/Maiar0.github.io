@@ -23,9 +23,8 @@
     <main>
         <section class="contact-form">
             <h2>Contact Dennis Ward II</h2>
-            <form action="https://formsubmit.co/47b22e709eec47e7568515604bde105b" method="POST">
+            <form id="contactForm" action="https://formsubmit.co/47b22e709eec47e7568515604bde105b" method="POST">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
                 
                 <div>
                     <label for="name">Your Name:</label>
@@ -45,11 +44,17 @@
                 </div>
                 <button type="submit">Send Message</button>
             </form>
+
+            <!-- Confirmation Message -->
+            <div id="confirmationMessage" style="display: none; margin-top: 20px; color: green;">
+                Thank you! Your message has been sent successfully.
+            </div>
         </section>
+        
         <section class="contact-info">
             <h2>Additional Contact Information</h2>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:dennis.ward2nd@gmail.com">dennis.wasrd2nd@gmail.com</a></li>
+                <li><strong>Email:</strong> <a href="mailto:dennis.ward2nd@gmail.com">dennis.ward2nd@gmail.com</a></li>
                 <li><strong>GitHub:</strong> <a href="https://github.com/Maiar0" target="_blank">https://github.com/Maiar0</a></li>
                 <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dennis-ward-5b0a56148" target="_blank">linkedin.com/in/dennis-ward-5b0a56148</a></li>
             </ul>
@@ -58,5 +63,30 @@
     <footer>
         <p>&copy; 2025 Dennis Ward II. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const form = event.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    form.reset(); // Clear form fields
+                    form.style.display = 'none'; // Hide form
+                    document.getElementById('confirmationMessage').style.display = 'block'; // Show confirmation
+                } else {
+                    alert('There was a problem with your submission. Please try again.');
+                }
+            } catch (error) {
+                alert('An error occurred while sending the message.');
+            }
+        });
+    </script>
 </body>
 </html>
