@@ -35,6 +35,14 @@
     margin-top: 0.5rem; /* Space between title and description */
 }
 
+/* Make the breakdown container a flexbox grid */
+.breakdown-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px; /* Adds space between cards */
+}
+
 /* Used in Project Break Down */
 .breakdown-item {
     border: 1px solid #ddd; /* Light gray border */
