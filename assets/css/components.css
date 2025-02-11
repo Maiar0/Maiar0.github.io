@@ -37,16 +37,18 @@
 
 /* Ensure breakdown list uses a column-based layout */
 .breakdown-list {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    flex-direction: column; /* Items grow downward */
-    align-items: center; /* Center items */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 20px; /* Space between items */
+    justify-content: center; /* Center the grid */
 }
 
 /* Fixed width and stacked growth */
 .breakdown-item {
-    width: 300px; /* Fixed width for each item */
+    width: 40vw; /* 40% of the viewport width */
+    max-width: 500px; /* Prevents items from getting too large */
+    min-width: 300px; /* Prevents items from getting too small */
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
@@ -189,13 +191,13 @@
     }
     
     .breakdown-list {
-        flex-direction: column; /* Keep stacking items downward */
-        align-items: center;
+        grid-template-columns: 1fr; /* Switch to single column on small screens */
     }
 
     .breakdown-item {
-        width: 90%; /* Allow flexibility on smaller screens */
+        width: 90%; /* Take most of the screen width for better readability */
     }
+    
     .stocksense-container {
         flex-direction: column;
     }
