@@ -35,29 +35,28 @@
     margin-top: 0.5rem; /* Space between title and description */
 }
 
-/* Make the breakdown container a flexbox grid */
+/* Ensure breakdown list uses a column-based layout */
 .breakdown-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px; /* Adds space between cards */
+    flex-direction: column; /* Items grow downward */
+    align-items: center; /* Center items */
+    gap: 20px; /* Space between items */
 }
 
-/* Used in Project Break Down */
+/* Fixed width and stacked growth */
 .breakdown-item {
-    border: 1px solid #ddd; /* Light gray border */
-    padding: 1rem; /* Add padding inside the box */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
-    margin-bottom: 1.5rem; /* Space between items */
+    width: 300px; /* Fixed width for each item */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Hover Effect for Breakdown Items */
+/* Hover effect for interactivity */
 .breakdown-item:hover {
-    transform: translateY(-5px); /* Slightly lift the box */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px);
 }
 
 /* Title Styling Inside Breakdown Items */
@@ -187,6 +186,15 @@
     .about-container {
         width: 90%;
         padding: 1.5rem;
+    }
+    
+    .breakdown-list {
+        flex-direction: column; /* Keep stacking items downward */
+        align-items: center;
+    }
+
+    .breakdown-item {
+        width: 90%; /* Allow flexibility on smaller screens */
     }
     .stocksense-container {
         flex-direction: column;
