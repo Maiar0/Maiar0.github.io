@@ -47,7 +47,7 @@
 
 /* Each breakdown item takes 40% of the viewport width */
 .breakdown-item {
-    width: 40vw; /* 40% of the screen width */
+    width: 45vw; /* 45% of the screen width */
     max-width: 500px; /* Prevents oversized cards */
     min-width: 300px; /* Ensures minimum readability */
     background-color: #f8f8f8;
