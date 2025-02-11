@@ -35,21 +35,21 @@
     margin-top: 0.5rem; /* Space between title and description */
 }
 
-/* Two-column layout with centered positioning */
+/* Ensure breakdown list is a two-column layout and centered */
 .breakdown-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Ensures equal columns */
     gap: 20px; /* Space between items */
-    justify-content: center; /* Center the entire grid */
-    place-content: center; /* Ensures content stays centered */
-    width: 100%; /* Makes sure it spans the full viewport */
+    justify-content: center; /* Centers the entire grid in the viewport */
+    width: 80%; /* Makes sure it spans a balanced width */
+    margin: 0 auto; /* Centers the grid within the page */
 }
 
 /* Each breakdown item takes 40% of the viewport width */
 .breakdown-item {
-    width: 45vw; /* 45% of the screen width */
-    max-width: 500px; /* Prevents oversized cards */
-    min-width: 300px; /* Ensures minimum readability */
+    width: 100%; /* Ensures the items expand within their grid column */
+    max-width: 500px; /* Prevents items from getting too large */
+    min-width: 300px; /* Prevents items from getting too small */
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
@@ -193,11 +193,10 @@
     
     .breakdown-list {
         grid-template-columns: 1fr; /* Switch to single column on small screens */
-        justify-content: center;
     }
 
     .breakdown-item {
-        width: 90%; /* Expand to almost full width on smaller screens */
+        width: 90%; /* Take most of the screen width for better readability */
     }
     
     .stocksense-container {
