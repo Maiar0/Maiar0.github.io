@@ -184,6 +184,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.video-container iframe {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-container {
