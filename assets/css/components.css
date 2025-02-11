@@ -164,10 +164,35 @@
     font-weight: bold;
 }
 
+/* Container for side-by-side sections */
+.stocksense-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Each section inside the container */
+#stocksense-evolution, #stocksense-impact {
+    width: 48%; /* Each takes half of the available space */
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-container {
         width: 90%;
         padding: 1.5rem;
+    }
+    .stocksense-container {
+        flex-direction: column;
+    }
+
+    #stocksense-evolution, #stocksense-impact {
+        width: 100%;
     }
 }
