@@ -190,6 +190,24 @@
     margin-top: 15px;
 }
 
+/* Style for Self-Assessment Section */
+#self-assessment {
+    max-width: 800px; /* Limit width to keep text in the center */
+    margin: 50px auto; /* Centers the section on the page */
+    padding: 40px; /* Adds generous padding */
+    background: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Modern and readable font */
+    line-height: 1.8; /* Improves readability */
+}
+
+/* Headings inside Self-Assessment */
+#self-assessment h2 {
+    font-size: 2rem;
+    color: #007BFF; /*
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
