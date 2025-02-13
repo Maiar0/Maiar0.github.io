@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Outcomes | StockSense</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <header>
+        <h1>Course Outcomes</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Course Outcomes Section -->
+        <section id="self-assessment">
+            <h2>Employing Strategies for Building Collaborative Environments</h2>
+            <p>
+                One of the most impactful improvements in Enhancement Three was transitioning StockSense from a single-user 
+                application with a local SQLite database to a multi-user cloud-based system with Supabase. This enhancement 
+                enables real-time inventory management, allowing multiple users to collaboratively track stock levels, reduce 
+                discrepancies, and improve decision-making. By designing a shared database infrastructure, I supported organizational 
+                decision-making by ensuring that team members always have access to the most up-to-date inventory data, reducing 
+                miscommunication and errors.
+            </p>
+            <p>
+                Additionally, in Enhancement One, I implemented CSV import/export functionality, which enables users to transfer 
+                inventory data between StockSense and external tools like Excel. This enhanced collaboration by allowing teams to 
+                analyze data externally, making informed business decisions based on accurate reports. These enhancements demonstrate 
+                my ability to design computing solutions that support collaborative environments, ensuring that StockSense can function 
+                effectively in team-based inventory management settings.
+            </p>
+
+            <h2>Professional Quality Oral, Written, and Visual Communication</h2>
+            <p>
+                Throughout all enhancements, I placed a strong emphasis on clear, professional documentation and structured 
+                technical explanations. In Enhancement One, I provided detailed function-level commenting and a workflow diagram 
+                that visually represents the application’s architecture. These materials ensure that future developers and stakeholders 
+                can understand and modify the application as needed.
+            </p>
+            <p>
+                In Enhancement Two, I documented search optimization techniques, outlining the shift from O(n) linear search 
+                to O(1) HashMap-based retrieval. I produced a SearchHashMapsAnalysis document, which provides a structured breakdown 
+                of algorithmic complexity and potential improvements. This level of documentation ensures that technical decisions 
+                are well-communicated to developers and stakeholders, improving project maintainability.
+            </p>
+            <p>
+                Additionally, in Enhancement Three, I utilized Postman to test and document API responses when integrating Supabase. 
+                This structured approach ensured that authentication and database interactions were well-documented and easy to debug, 
+                demonstrating strong technical communication skills in API integration.
+            </p>
+
+            <h2>Designing and Evaluating Computing Solutions Using Algorithmic Principles</h2>
+            <p>
+                A key improvement in Enhancement Two was the optimization of search functionality, where I replaced a list-based 
+                search (O(n)) with a dual HashMap approach (O(1) ID lookups and O(n*m) name searches). This design significantly 
+                improved efficiency, reducing latency for larger datasets.
+            </p>
+            <p>
+                To further evaluate and improve search performance, I considered two additional enhancements: implementing a Trie 
+                (Prefix Tree) for prefix-based name searches, reducing lookup complexity to O(m), and leveraging SQLite Full-Text 
+                Search (FTS5) for database-backed indexed queries, further improving search speed.
+            </p>
+            <p>
+                This enhancement demonstrates my ability to design, analyze, and refine computing solutions, ensuring that algorithmic 
+                principles are effectively applied to real-world problems. The trade-offs considered—balancing memory usage (HashMaps) 
+                versus query efficiency (FTS5)—reflect my ability to manage computational trade-offs in algorithm design.
+            </p>
+
+            <h2>Applying Well-Founded and Innovative Techniques in Software Engineering</h2>
+            <p>
+                Each enhancement showcases my ability to apply modern software development tools and techniques. In Enhancement One, 
+                I improved StockSense’s modularity by introducing DbSelectionView and SearchViewActivity, adhering to separation of 
+                concerns and ensuring that each component focused solely on its intended function. This structured approach enhances 
+                scalability and maintainability, aligning with industry best practices in software engineering.
+            </p>
+            <p>
+                In Enhancement Three, I transitioned StockSense from a local SQLite database to Supabase, a cloud-based backend that 
+                enables remote database access and authentication. This required integrating Retrofit for API calls, optimizing query 
+                performance, and ensuring that data remained synchronized across multiple users. Debugging database connectivity issues, 
+                analyzing server vs. client-side sorting, and balancing query efficiency vs. real-time responsiveness reinforced my 
+                ability to implement scalable, production-ready database solutions.
+            </p>
+
+            <h2>Developing a Security Mindset in Software Development</h2>
+            <p>
+                Security was a critical focus in Enhancement Three, where I replaced insecure credential storage (SharedPreferences) 
+                with hashed password authentication in Supabase. This enhancement mitigates potential security risks, ensuring that 
+                sensitive user credentials are encrypted and securely managed.
+            </p>
+            <p>
+                Additionally, while exploring database optimizations in Enhancement Two, I evaluated the security implications of 
+                search indexing and query structures, ensuring that potential SQL injection vulnerabilities were mitigated. By 
+                considering security risks in search optimization, I demonstrated an ability to anticipate and address adversarial 
+                exploits in database queries.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Dennis Ward. All rights reserved.</p>
+    </footer>
+</body>
+</html>
