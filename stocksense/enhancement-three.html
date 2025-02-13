@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancement Three | StockSense</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <header>
+        <h1>Enhancement Three - StockSense</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Enhancement Three Narrative Section -->
+        <section id="self-assessment">
+            <h2>Enhancement Three Narrative</h2>
+            <p>
+                The selected artifact for this enhancement is the StockSense mobile application, originally developed in CS360 for inventory management. 
+                Initially, the application relied on a local SQLite database, limiting its scalability and usability in a multi-user environment. 
+                To improve its real-world applicability, I enhanced the project by integrating an online Supabase database, transforming it into 
+                a cloud-based, multi-user system. This enhancement enables remote database access, allowing organizations to manage inventory 
+                collaboratively and securely.
+            </p>
+
+            <p>
+                I chose this artifact for my ePortfolio because it demonstrates my ability to work with modern database technologies and secure 
+                authentication mechanisms. Transitioning from a local SQLite database to Supabase showcases my ability to design and implement 
+                scalable cloud-based solutions. Additionally, I incorporated user authentication with hashed passwords, demonstrating secure 
+                data management practices. This enhancement highlights my ability to develop robust backend architectures, utilize APIs for 
+                database interactions, and handle real-world database constraints such as indexing, query optimization, and user role management.
+            </p>
+
+            <h3>Alignment with Course Outcomes</h3>
+            <p>
+                Through this enhancement, I successfully met several course outcomes. The transition to a hosted multi-user database supports 
+                organizational decision-making by enabling multiple users to interact with shared inventory data. By implementing structured 
+                documentation and API integration, I demonstrated professional technical communication skills. The adoption of Supabase and 
+                Retrofit for API calls reflects my ability to design computing solutions that address real-world needs, ensuring scalability 
+                and performance. Additionally, I implemented hashed passwords for user authentication, reinforcing security principles and 
+                mitigating risks associated with credential storage.
+            </p>
+
+            <h3>Challenges and Learning Experiences</h3>
+            <p>
+                The process of enhancing this application provided valuable learning experiences. Before this project, I had never connected an 
+                online database to a mobile application. Setting up Supabase and integrating it with the Android application using Retrofit presented 
+                challenges, particularly in managing API calls and debugging connectivity issues. To resolve these issues, I utilized Postman to test 
+                endpoints and troubleshoot API responses. Additionally, I refined database queries to ensure efficient data retrieval and sorting 
+                mechanisms, exploring solutions such as server-side sorting versus client-side management. This experience strengthened my understanding 
+                of database architecture, API debugging, and mobile-to-backend integration.
+            </p>
+
+            <h3>Database Optimization and Sorting Strategies</h3>
+            <p>
+                One of the key challenges I faced was determining how and where to sort the inventory data. Initially, I considered handling sorting 
+                on the client-side using a DataManager, but later explored database triggers to perform sorting upon retrieval. Due to the complexity 
+                of trigger-based sorting, I am inclined to maintain client-side sorting, optimizing performance based on application needs. This decision 
+                reflects my ability to assess trade-offs between database and application logic, balancing efficiency and maintainability.
+            </p>
+
+            <h3>Impact and Future Considerations</h3>
+            <p>
+                This enhancement represents a significant step in professionalizing the StockSense application, making it viable for real-world 
+                deployment. By integrating Supabase for database hosting, Retrofit for API communication, and secure authentication, I have enhanced 
+                the project’s scalability, security, and usability. Future improvements could include real-time updates, data synchronization strategies, 
+                and role-based access control to further enhance functionality. The knowledge gained from this enhancement will be instrumental in future 
+                software development projects, particularly those requiring backend integration, cloud databases, and mobile application security.
+            </p>
+        </section>
+
+        <!-- GitHub Repository Link -->
+        <section class="github-link">
+            <h3>View Enhancement Three on GitHub</h3>
+            <p>
+                You can review the source code and commit history for this enhancement on GitHub:
+            </p>
+            <p>
+                <a href="https://github.com/Maiar0/StockSense/tree/Enhancement-Three" target="_blank">
+                    StockSense Enhancement Three GitHub Repository
+                </a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Dennis Ward. All rights reserved.</p>
+    </footer>
+</body>
+</html>
