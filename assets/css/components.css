@@ -190,6 +190,25 @@
     margin-top: 15px;
 }
 
+/* Button Styling */
+.repo-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.repo-button:hover {
+    background-color: #0056b3;
+}
+
 /* Style for Self-Assessment Section */
 #self-assessment {
     max-width: 800px; /* Limit width to keep text in the center */
@@ -208,24 +227,7 @@
     color: #007BFF; /*
 
     }
-/* Button Styling */
-        .repo-button {
-            display: inline-block;
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease-in-out;
-        }
 
-        .repo-button:hover {
-            background-color: #0056b3;
-        }
 
 /* Responsive Design */
 @media (max-width: 768px) {
