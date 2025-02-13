@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancement One | StockSense</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <header>
+        <h1>Enhancement One - StockSense</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Enhancement One Narrative Section -->
+        <section id="self-assessment">
+            <h2>Enhancement One Narrative</h2>
+            <p>
+                Enhancement One for the StockSense application focused on implementing modular and focused views, 
+                specifically the `DbSelectionView` and `SearchViewActivity`, which inherit from the `MainActivity`. 
+                This design ensures modularity by encapsulating specific functionality within each screen, adhering 
+                to the principle of separation of concerns. Each view focuses solely on its intended purpose, such as 
+                database selection or search operations. The inclusion of CSV import/export methods enhances the 
+                application’s functionality, enabling seamless data transfer and improved control over data management. 
+                Robust error handling mechanisms have also been integrated to ensure user-friendly feedback and 
+                application reliability.
+            </p>
+
+            <p>
+                The use of the OpenCSV library for efficient CSV parsing and exporting demonstrates the application of 
+                standard and innovative tools in software development. Additionally, implementing `RecyclerView` for 
+                dynamic views aligns with best practices in Android development, ensuring scalability and responsiveness. 
+                These tools and techniques highlight proficiency in leveraging established and advanced development practices.
+            </p>
+
+            <h3>Code Documentation and Maintainability</h3>
+            <p>
+                Throughout the enhancement, I have prioritized clear and professional documentation. Every function 
+                and variable within the code has been thoroughly commented to ensure clarity. The code is structured 
+                with descriptive names for variables and functions, reflecting their intended functionality. A workflow 
+                diagram accompanies this narrative to visually illustrate the application’s design and functionality, 
+                further enhancing the documentation.
+            </p>
+
+            <h3>Error Handling and Security Improvements</h3>
+            <p>
+                Error handling has been a critical component of this enhancement, particularly in CSV operations and 
+                database interactions. These mechanisms ensure that the application responds appropriately to invalid 
+                input or system errors. Additionally, I removed the password feature during this enhancement for 
+                simplicity in setting up new screens. Based on professor feedback, I plan to develop a more secure 
+                login mechanism, as the initial implementation of storing credentials in shared preferences lacked 
+                adequate security.
+            </p>
+
+            <h3>Collaborative Features and Impact</h3>
+            <p>
+                The import/export features empower users to transfer data to external tools like Excel for further 
+                analysis, fostering a collaborative environment. This capability is crucial for enabling teams to 
+                make data-driven decisions and share insights effectively, aligning with the course outcome of 
+                supporting collaborative decision-making.
+            </p>
+
+            <h3>Technical Skills Demonstrated</h3>
+            <p>
+                The enhancement demonstrates a variety of technical skills. Proficiency in Java programming is evident 
+                through the use of object-oriented principles, effective exception handling, and adherence to coding 
+                best practices. Advanced Android development skills are showcased in the use of `RecyclerView`, 
+                modular activity design, and lifecycle management. The ability to manage and transfer structured data 
+                is demonstrated through the CSV import/export functionality. Additionally, the project highlights best 
+                practices in modularity, comprehensive commenting, and conventional naming, such as aligning the `Item` 
+                model’s naming convention with database schema for clarity. Version control with Git branches underscores 
+                the importance of collaborative workflows. While this enhancement primarily focused on the front end, 
+                the integration with a backend Supabase repository reflects an understanding of the full-stack development 
+                lifecycle.
+            </p>
+
+            <h3>Project Context and Future Plans</h3>
+            <p>
+                The artifact selected for this enhancement is a mobile application initially developed for CS360. It 
+                was designed for simple inventory management, relying on local database storage and containing legacy 
+                code that required refactoring. This project was chosen due to its potential for growth into a 
+                production-ready application. The initial implementation demonstrated a strong foundation in Android 
+                development and Java programming. The enhancements aim to transition the application towards a 
+                team-oriented inventory management tool, introducing modular design and advanced functionality.
+            </p>
+
+            <h3>Alignment with Course Outcomes</h3>
+            <p>
+                Enhancement One successfully addresses four of the five course outcomes. Modular UI design with 
+                `DbSelectionView` and `SearchViewActivity` showcases the ability to design and evaluate computing 
+                solutions. The use of innovative tools like OpenCSV and adherence to Android development best 
+                practices reflect the ability to employ well-founded techniques. Comprehensive commenting and clear 
+                documentation align with the outcome of professional communication. Initial steps towards secure data 
+                management also demonstrate progress. Algorithmic improvements, which are yet to be fully addressed, 
+                will be covered in Enhancement Two.
+            </p>
+
+            <h3>Challenges and Solutions</h3>
+            <p>
+                The development process was initially daunting due to workflow inefficiencies caused by tackling database 
+                enhancements (Enhancement Three) early to support Enhancement One. Setting up the Supabase repository and 
+                implementing backend calls via Retrofit required extensive debugging. Tools like Postman were invaluable 
+                for validating API calls. Modularizing views and cleaning up legacy code posed challenges, particularly 
+                when ensuring data transfer between activities via intents. CSV import/export functionality, though 
+                unfamiliar initially, was implemented successfully. Future enhancements will focus on optimizing API 
+                efficiency.
+            </p>
+
+            <h3>Conclusion</h3>
+            <p>
+                Enhancement One has significantly improved the StockSense application’s functionality and usability. 
+                This enhancement showcases a wide range of technical skills and aligns with key course outcomes. 
+                The groundwork laid in this enhancement will support subsequent improvements, further solidifying 
+                the application as a robust and scalable inventory management solution.
+            </p>
+        </section>
+
+        <!-- GitHub Repository Link -->
+        <section class="github-link">
+            <h3>View Enhancement One on GitHub</h3>
+            <p>
+                You can review the source code and commit history for this enhancement on GitHub:
+            </p>
+            <p>
+                <a href="https://github.com/Maiar0/StockSense/tree/Enhancement-One" target="_blank">
+                    StockSense Enhancement One GitHub Repository
+                </a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Dennis Ward. All rights reserved.</p>
+    </footer>
+</body>
+</html>
