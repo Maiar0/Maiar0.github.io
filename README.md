@@ -1,4 +1,4 @@
-# StockSense Portfolio
+# ePortfolio
 
 Visit the website here: [ePortfolio](https://maiar0.github.io/)
 
