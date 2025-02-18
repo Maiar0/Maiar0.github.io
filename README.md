@@ -38,12 +38,11 @@ These documents provide the **academic reflections** on the StockSense project e
 ## 📝 Portfolio Narratives (Used for ePortfolio)
 These narratives were used to document my ePortfolio reflections.
 
-- 📄 [CS499 Module One Assignment](https://maiar0.github.io/Documents/Supporting%20Documents/CS%20499%20Module%20One%20Assignment.pdf)
 - 📄 [CS499 Artifact Narrative](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Artifact%20Narrative.pdf)
 - 📄 [CS499 Enhancement One Narrative](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Enhancement%20One%20Narrative.pdf)
 - 📄 [CS499 Enhancement Two Narrative](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Enhancement%20Two%20Narrative.pdf)
 - 📄 [CS499 Enhancement Three Narrative](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Enhancement%20Three%20Narrative.pdf)
-- 📄 [CS499 Self Assessment Cover Letter (Dennis Ward)](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Self%20Assessment%20Cover%20Letter%20version%20Dennis%20Ward.pdf)
+- 📄 [CS499 Self Assessment](https://maiar0.github.io/Documents/Supporting%20Documents/CS499%20Self%20Assessment%20Cover%20Letter%20version%20Dennis%20Ward.pdf)
 
 ---
 
