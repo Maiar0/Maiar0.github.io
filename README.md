@@ -28,7 +28,7 @@ Welcome to my **ePortfolio**! This repository showcases my work, projects, and a
 ## 📖 Academic Narratives (Milestone Documents)
 These documents provide the **academic reflections** on the StockSense project enhancements.
 
-- 📄 [CS499 Milestone Two Enhancement One]([Documents/CS499 MIlestone Two Enhancement One.pdf](https://github.com/Maiar0/Maiar0.github.io/blob/bf6eba9e31ea50a9cc2948e9c470fb92a48d88af/Documents/CS499%20MIlestone%20Two%20Enhancement%20One.pdf))
+- 📄 [CS499 Milestone Two Enhancement One]([Documents/CS499 MIlestone Two Enhancement One.pdf](https://maiar0.github.io/Documents/Supporting%20Documents/CS%20499%20Module%20One%20Assignment.pdf)
 - 📄 [CS499 Milestone Three Enhancement Two](https://maiar0.github.io/Documents/CS499%20Milestone%20Three%20Enhancement%20Two.pdf)
 - 📄 [CS499 Milestone Four Enhancement Three](https://maiar0.github.io/Documents/CS499%20Milestone%20Four%20Enhancement%20Three%20Dennis%20Ward.pdf)
 - 📄 [CS499 Self Assessment](https://maiar0.github.io/Documents/CS499%20Self%20Assessment%20Dennis%20Ward.pdf)
