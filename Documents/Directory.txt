@@ -1,9 +1,9 @@
+ePortfolio 
+https://maiar0.github.io/index.html
+
 Code Review
 https://maiar0.github.io/stocksense/codereview.html
 https://youtu.be/AZUpouXb-WU
-
-ePortfolio 
-https://maiar0.github.io/index.html
 
 Artifact StockSense
 https://maiar0.github.io/stocksense/stocksense.html
