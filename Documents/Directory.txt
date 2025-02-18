@@ -1,0 +1,27 @@
+Code Review
+https://maiar0.github.io/stocksense/codereview.html
+https://youtu.be/AZUpouXb-WU
+
+ePortfolio 
+https://maiar0.github.io/index.html
+
+Artifact StockSense
+https://maiar0.github.io/stocksense/stocksense.html
+
+Original Work before Enhancements
+https://github.com/Maiar0/StockSense/tree/main
+
+Enhancement One
+https://maiar0.github.io/stocksense/enhancement-one.html
+https://github.com/Maiar0/StockSense/tree/Enhancement-One
+
+Enhancement Two
+https://maiar0.github.io/stocksense/enhancement-two.html
+https://github.com/Maiar0/StockSense/tree/Enhancement-Two
+
+Enhancement Three
+https://maiar0.github.io/stocksense/enhancement-three.html
+https://github.com/Maiar0/StockSense/tree/Enhancement-Three
+
+Course Outcomes
+https://maiar0.github.io/stocksense/course-outcomes.html
