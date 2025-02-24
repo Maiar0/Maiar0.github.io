@@ -1,8 +1,8 @@
 :root {
     /* Primary Colors */
     --primary-black: #0d0d0d; /* Deep black for background */
-    --secondary-gray: #1a1a1a; /* Dark gray for contrast */
-    --tertiary-gray: #292929; /* Slightly lighter gray for elements */
+    --secondary-gray: #403f3f; /* Dark gray for contrast */
+    --tertiary-gray: #5d5c5c; /* Slightly lighter gray for elements */
 
     /* Text Colors */
     --text-orange: #d3853b; /* Accent orange */

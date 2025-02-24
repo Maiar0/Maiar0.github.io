@@ -1,7 +1,9 @@
+@import url('colors.css');
+
 /* Header Styles */
 header {
-    background: linear-gradient(to left, #030000, #465062);
-    color: #d3853b;
+    background: linear-gradient(to right, var(--secondary-gray) 0%, var(--primary-black) 50%, var(--secondary-gray) 100%);
+    color: var(--text-light);
     padding: 2rem 1rem;
     text-align: center;
 }
@@ -17,7 +19,7 @@ header {
 }
 
 body {
-    background-color: #f0f2f5; /* Light gray background for a modern feel */
+    background: linear-gradient(to right, var(--secondary-gray) 0%, var(--primary-black) 50%, var(--secondary-gray) 100%);
     color: #333; /* Dark gray text for readability */
 }
 
@@ -35,18 +37,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #d3853b;
-    text-decoration: none;
-    font-weight: bold;
+    color: var(--text-orange);
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #b92510;
+    color: var(--hover-red);
 }
 
+
 footer {
-    background: linear-gradient(to right, #030000, #465062);
-    color: #d3853b;
+    background-color: var(--secondary-gray);
+    color: var(--text-muted);
     text-align: center;
 }
+
 
