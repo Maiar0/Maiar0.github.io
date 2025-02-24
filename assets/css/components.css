@@ -1,3 +1,4 @@
+@import url('colors.css');
 /* Style the project box */
 .project-box {
     background-color: var(--tertiary-gray);
@@ -222,7 +223,7 @@
 /* Headings inside Self-Assessment */
 #self-assessment h2 {
     font-size: 2rem;
-    color: #007BFF; /*
+    color: #007BFF; 
 
     }
 

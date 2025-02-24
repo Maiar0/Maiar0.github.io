@@ -1,3 +1,4 @@
+@import url('colors.css');
 /* Header Styles */
 header {
     background: linear-gradient(to right, var(--secondary-gray) 0%, var(--primary-black) 50%, var(--secondary-gray) 100%);
