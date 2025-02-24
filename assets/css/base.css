@@ -16,6 +16,11 @@ header {
     font-size: 1.2rem;
 }
 
+body {
+    background-color: #f0f2f5; /* Light gray background for a modern feel */
+    color: #333; /* Dark gray text for readability */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -30,13 +35,11 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: #f8f9fa; 
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    color: #ffdd57;
 }
 
 
