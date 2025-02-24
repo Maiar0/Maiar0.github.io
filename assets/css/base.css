@@ -1,7 +1,7 @@
 /* Header Styles */
 header {
-    background: linear-gradient(to right, #007BFF, #0056b3);
-    color: white;
+    background: linear-gradient(to left, #030000, #465062);
+    color: #d3853b;
     padding: 2rem 1rem;
     text-align: center;
 }
@@ -35,18 +35,18 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f8f9fa;
+    color: #d3853b;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #ffdd57;
+    color: #b92510;
 }
 
 footer {
-    background-color: #222;
-    color: #ddd; 
+    background: linear-gradient(to right, #030000, #465062);
+    color: #d3853b;
     text-align: center;
 }
 
