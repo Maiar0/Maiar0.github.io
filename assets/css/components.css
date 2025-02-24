@@ -1,40 +1,42 @@
+@import url('colors.css');
 /* Style the project box */
 .project-box {
-    border: 2px solid #007BFF; /* Add a blue border */
+    border: 2px solid var(--text-orange); /* Orange border to match theme */
     padding: 1rem; /* Add spacing inside the box */
     border-radius: 8px; /* Round the corners */
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    background-color: var(--tertiary-gray); /* Dark gray background */
+    box-shadow: 0 4px 8px var(--box-shadow); /* Subtle shadow for depth */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
 }
 
 /* Hover effect for the box */
 .project-box:hover {
     transform: translateY(-5px); /* Slightly lift the box */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    background-color: #e3f2fd;
+    box-shadow: 0 8px 16px var(--box-shadow); /* Darker shadow on hover */
+    background-color: var(--tertiary-gray); /* Red hover effect */
 }
 
 /* Style the project title */
 .project-box h3 a {
     font-size: 1.5rem; /* Make the title larger */
-    color: #007BFF; /* Blue color for the link */
+    color: var(--text-orange); /* Orange for links */
     text-decoration: none; /* Remove underline */
 }
 
 /* Hover effect for the link */
 .project-box h3 a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: var(--hover-red); /* Red on hover */
     text-decoration: underline; /* Add underline on hover */
 }
 
 /* Style the description */
 .project-box p {
     font-size: 1rem; /* Standard font size */
-    color: #555; /* Slightly muted color for readability */
+    color: var(--text-light); /* Light gray text for readability */
     line-height: 1.5; /* Improve line spacing */
     margin-top: 0.5rem; /* Space between title and description */
 }
+
 
 /* Ensure breakdown list is a two-column layout and centered */
 .breakdown-list {
@@ -215,19 +217,22 @@
     max-width: 800px; /* Limit width to keep text in the center */
     margin: 50px auto; /* Centers the section on the page */
     padding: 40px; /* Adds generous padding */
-    background: #f9f9f9; /* Light background for contrast */
+    background: linear-gradient(to right, var(--secondary-gray) 0%, var(--primary-black) 50%, var(--secondary-gray) 100%);
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px var(--box-shadow); /* Subtle shadow for depth */
     font-family: 'Arial', sans-serif; /* Modern and readable font */
     line-height: 1.8; /* Improves readability */
+    color: var(--text-light); /* Light text for readability */
 }
 
 /* Headings inside Self-Assessment */
 #self-assessment h2 {
     font-size: 2rem;
-    color: #007BFF; 
+    color: var(--text-orange); /* Orange accent for headings */
+    border-bottom: 2px solid var(--text-orange); /* Adds a subtle underline */
+    padding-bottom: 5px;
+}
 
-    }
 
 
 /* Responsive Design */

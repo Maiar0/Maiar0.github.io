@@ -53,3 +53,17 @@ footer {
 }
 
 
+/* General link styling */
+a {
+    color: var(--text-orange); 
+    text-decoration: none; 
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+a:hover {
+    color: var(--hover-red); 
+    text-decoration: underline; 
+}
+
+

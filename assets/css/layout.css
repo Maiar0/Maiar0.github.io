@@ -6,9 +6,12 @@
     margin: 0 auto;
     padding: 2rem;
 }
+
+/* Dark theme section styling */
 section {
-    background-color: #ffffff; /* Clean white background */
+    background: linear-gradient(to right, var(--secondary-gray) 0%, var(--primary-black) 50%, var(--secondary-gray) 100%);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--box-shadow); /* Darker subtle shadow */
+    color: var(--text-light); /* Ensures text is readable */
 }
