@@ -1,0 +1,23 @@
+:root {
+    /* Primary Colors */
+    --primary-black: #0d0d0d; /* Deep black for background */
+    --secondary-gray: #1a1a1a; /* Dark gray for contrast */
+    --tertiary-gray: #292929; /* Slightly lighter gray for elements */
+
+    /* Text Colors */
+    --text-orange: #d3853b; /* Accent orange */
+    --hover-red: #b92510; /* Hover state red */
+    --text-light: #e6e6e6; /* Off-white for readability */
+    --text-muted: #b3b3b3; /* Dimmed text for subtle elements */
+
+    /* Borders & Highlights */
+    --border-gray: #444; /* Border color for boxes */
+    --box-shadow: rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+
+    /* Accent Colors */
+    --accent-blue: #008cff; /* Optional accent (for links, buttons) */
+    --accent-green: #1db954; /* Optional highlight color */
+
+    /* Background Overlays */
+    --overlay-dark: rgba(0, 0, 0, 0.7); /* Dark overlay for effects */
+}
