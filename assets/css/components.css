@@ -12,6 +12,7 @@
 .project-box:hover {
     transform: translateY(-5px); /* Slightly lift the box */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    background-color: #e3f2fd;
 }
 
 /* Style the project title */
