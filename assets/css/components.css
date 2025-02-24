@@ -53,37 +53,41 @@
     width: 100%; /* Ensures the items expand within their grid column */
     max-width: 500px; /* Prevents items from getting too large */
     min-width: 300px; /* Prevents items from getting too small */
-    background-color: #f8f8f8;
+    background-color: var(--tertiary-gray); /* Darker background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--box-shadow); /* Subtle shadow */
     transition: transform 0.2s ease-in-out;
+    color: var(--text-light); /* Light text for readability */
 }
 
 /* Hover effect for interactivity */
 .breakdown-item:hover {
     transform: translateY(-5px);
+    background-color: var(--hover-red); /* Slightly brightens on hover */
 }
 
 /* Title Styling Inside Breakdown Items */
 .breakdown-item h3 a {
     font-size: 1.25rem; /* Slightly larger font for title */
-    color: #007BFF; /* Blue text for links */
+    color: var(--text-orange); /* Orange text to match the theme */
     text-decoration: none; /* Remove underline */
 }
 
+/* Hover effect for links */
 .breakdown-item h3 a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: var(--hover-red); /* Red hover effect */
     text-decoration: underline; /* Add underline on hover */
 }
 
 /* Description Styling */
 .breakdown-item p {
     font-size: 1rem; /* Standard text size */
-    color: #555; /* Slightly muted text for readability */
+    color: var(--text-light); /* Light text for better contrast */
     margin-top: 0.5rem; /* Space between title and description */
     line-height: 1.5; /* Improve line spacing */
 }
+
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -153,7 +157,7 @@
 /* Paragraph and List Styling */
 .about-container p, .about-container ul {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-light);
     line-height: 1.6;
 }
 
@@ -181,11 +185,13 @@
 /* Each section inside the container */
 #stocksense-evolution, #stocksense-impact {
     width: 45%; /* Each takes half of the available space */
-    background: #f8f8f8;
+    background: var(--tertiary-gray); /* Dark background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--box-shadow); /* Subtle dark shadow */
+    color: var(--text-light); /* Light text for readability */
 }
+
 
 .video-container {
     display: flex;
