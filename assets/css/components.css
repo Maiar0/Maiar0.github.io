@@ -7,6 +7,9 @@
     background-color: var(--tertiary-gray); /* Dark gray background */
     box-shadow: 0 4px 8px var(--box-shadow); /* Subtle shadow for depth */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Hover effect for the box */
@@ -239,7 +242,10 @@
     padding-bottom: 5px;
 }
 
-
+.align-right-bottom {
+    align-self: flex-end;
+    text-align: right;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
