@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
             tools: "Java, Android Studio, Supabase"
         },
         {
+            title: "SEVN Stack Application",
+            link: "https://github.com/Maiar0/stocksense-admin",
+            description: "Developed for StockSense Applicaiton as an Admin panel. The application is built with the SEVN stack, with a focus on the Vue.js framework.",
+            tools: "JS, Supabase, Express, Vue.js, Node.js"
+        },
+        {
             title: "MEAN Stack Application",
             link: "https://github.com/Maiar0/cs465-fullstack/tree/module7",
             description: "Developed in CS465, MEAN stack application for a mock-up website for Travlr website.",
