@@ -17,6 +17,66 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "https://github.com/Maiar0/cs465-fullstack/tree/module7",
             description: "Developed in CS465, MEAN stack application for a mock-up website for Travlr website.",
             tools: "JS, TypeScript, MongoDB, Express, Angular, Node.js"
+        },
+        {
+            title: "CS320-junit-tests",
+            link: "https://github.com/Maiar0/CS320-junit-tests",
+            description: "Project created to show working knowledge of junit testing, stubs, and assertEquals within Java.",
+            tools: "Java, JUnit"
+        },
+        {
+            title: "CS230",
+            link: "https://github.com/Maiar0/CS230",
+            description: "Small server-client application, with documentation and performance metrics. Built for course CS230.",
+            tools: "Java, Networking"
+        },
+        {
+            title: "CS370-Cartpole-Problem",
+            link: "https://github.com/Maiar0/CS370-Cartpole-Problem",
+            description: "Using Keras to solve the Cartpole Problem. Demonstrates reinforcement learning techniques.",
+            tools: "Python, Keras, Machine Learning"
+        },
+        {
+            title: "CS370-Treasure-Hunter",
+            link: "https://github.com/Maiar0/CS370-Treasure-Hunter",
+            description: "Using AI via Keras to play a maze game autonomously. Developed for CS370.",
+            tools: "Python, Keras, Game AI"
+        },
+        {
+            title: "CS360-Mobile-Application",
+            link: "https://github.com/Maiar0/CS360-Mobile-Application",
+            description: "Original Inventory Application created for CS360",
+            tools: "Java, Android Studio"
+        },
+        {
+            title: "CS350-Embedded-System",
+            link: "https://github.com/Maiar0/CS350-Embedded-System",
+            description: "Create a couple projects on TI CC3220S LaunchPad",
+            tools: "C, TI-RTOS, Embedded Systems"
+        },
+        {
+            title: "CS340-CRUD",
+            link: "https://github.com/Maiar0/CS340-CRUD",
+            description: "Create simple CRUD instructions for MongoDB",
+            tools: "JavaScript, MongoDB, Node.js"
+        },
+        {
+            title: "CS300-Efficiency",
+            link: "https://github.com/Maiar0/CS300-Efficiency",
+            description: "Test and analyze the efficiency of different lists.",
+            tools: "Java, Data Structures"
+        },
+        {
+            title: "CS210-Project-Three",
+            link: "https://github.com/Maiar0/CS210-Project-Three",
+            description: "Small Console Application to read and write data.",
+            tools: "Java, File I/O"
+        },
+        {
+            title: "CS330-OpenGL-Brick-Game",
+            link: "https://github.com/Maiar0/CS330-OpenGL-Brick-Game",
+            description: "Small console application using OpenGL",
+            tools: "C++, OpenGL"
         }
     ];
 
