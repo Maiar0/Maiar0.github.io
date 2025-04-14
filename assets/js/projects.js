@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "CS300-Efficiency",
             link: "https://github.com/Maiar0/CS300-Efficiency",
             description: "Test and analyze the efficiency of different lists.",
-            tools: "Java, Data Structures"
+            tools: "C++, Data Structures"
         },
         {
             title: "CS210-Project-Three",
             link: "https://github.com/Maiar0/CS210-Project-Three",
             description: "Small Console Application to read and write data.",
-            tools: "Java, File I/O"
+            tools: "C++, File I/O"
         },
         {
             title: "CS330-OpenGL-Brick-Game",
