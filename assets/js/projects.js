@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "CS340-CRUD",
             link: "https://github.com/Maiar0/CS340-CRUD",
             description: "Create simple CRUD instructions for MongoDB",
-            tools: "JavaScript, MongoDB, Node.js"
+            tools: "JavaScript, Python, MongoDB, Node.js"
         },
         {
             title: "CS300-Efficiency",
