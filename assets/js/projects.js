@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
             tools: "Java, Android Studio, Supabase"
         },
         {
+            title: "Chess Web Frontend",
+            link: "dwarddevs.com",
+            description: "Created a website to play a little chess!",
+            tools: "JS, SQLite, Node, Express, Vue.js"
+        },
+        {
+            title: "Chess Web Backend",
+            link: "https://github.com/Maiar0/chess-web-backend",
+            description: "Backend logic for chess website!",
+            tools: "JS, SQLite, Node, Express, Vue.js"
+        },
+        {
             title: "SEVN Stack Application",
             link: "https://github.com/Maiar0/stocksense-admin",
             description: "Developed for StockSense Applicaiton as an Admin panel. The application is built with the SEVN stack, with a focus on the Vue.js framework.",
