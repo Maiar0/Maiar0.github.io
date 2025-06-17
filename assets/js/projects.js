@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "StockSense",
             link: "stocksense/stocksense.html",
             description: "An inventory management mobile application built for Android. Originally created for CS360 as a basic inventory management tracker, with local room implementation of SQLite. Multiple enhancements UI, cloud database, user authentication, and CSV import and export.",
-            tools: "Java, Android Studio, Supabase"
+            tools: "Java, Android Studio, PostgreSQL"
         },
         {
             title: "Chess Web Frontend",
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "SEVN Stack Application",
             link: "https://github.com/Maiar0/stocksense-admin",
             description: "Developed for StockSense Applicaiton as an Admin panel. The application is built with the SEVN stack, with a focus on the Vue.js framework.",
-            tools: "JS, Supabase, Express, Vue.js, Node.js"
+            tools: "JS, PostgreSQL, Express, Vue.js, Node.js"
         },
         {
             title: "MEAN Stack Application",
