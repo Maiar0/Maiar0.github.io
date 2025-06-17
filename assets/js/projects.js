@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             title: "Chess Web Frontend",
-            link: "dwarddevs.com",
+            link: "www.dwarddevs.com",
             description: "Created a website to play a little chess!",
             tools: "JS, SQLite, Node, Express, Vue.js"
         },
