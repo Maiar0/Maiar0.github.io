@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV Formatter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      font-family: Courier New, monospace;
+      white-space: pre;
+    }
+    input[type="number"] {
+      width: 100px;
+      margin-left: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSV Formatter with Line Breaks</h1>
+
+  <label for="inputNumbers">Enter numbers (one per line):</label>
+  <textarea id="inputNumbers" placeholder="e.g.\n123\n456\n789"></textarea>
+
+  <div style="margin-top: 10px;">
+    <label for="chunkSize">Values per line:</label>
+    <input type="number" id="chunkSize" value="15000" min="1">
+  </div>
+
+  <button onclick="formatCSV()">Format</button>
+
+  <label for="outputCSV" style="margin-top: 20px; display: block;">Formatted Output:</label>
+  <textarea id="outputCSV" readonly placeholder="Formatted CSV will appear here..."></textarea>
+
+  <script>
+    function formatCSV() {
+      const input = document.getElementById('inputNumbers').value.trim();
+      const chunkSize = parseInt(document.getElementById('chunkSize').value, 10);
+      const outputBox = document.getElementById('outputCSV');
+
+      if (!input || isNaN(chunkSize) || chunkSize <= 0) {
+        outputBox.value = 'Invalid input or chunk size.';
+        return;
+      }
+
+      const rows = input
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(line => line !== '')
+        .map(value => `'${value}'`);
+
+      const chunks = [];
+      for (let i = 0; i < rows.length; i += chunkSize) {
+        chunks.push(rows.slice(i, i + chunkSize).join(','));
+      }
+
+      const finalOutput = chunks.join('\nbreak\nbreakline\n');
+      outputBox.value = finalOutput;
+    }
+  </script>
+
+</body>
+</html>
