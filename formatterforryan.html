@@ -28,6 +28,10 @@
     label {
       font-weight: bold;
     }
+    .chunk-label {
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -44,17 +48,22 @@
 
   <button onclick="formatCSV()">Format</button>
 
-  <label for="outputCSV" style="margin-top: 20px; display: block;">Formatted Output:</label>
-  <textarea id="outputCSV" readonly placeholder="Formatted numbers will appear here..."></textarea>
+  <div id="outputContainer" style="margin-top: 20px;">
+    <label>Formatted Output:</label>
+    <div id="chunksWrapper"></div>
+  </div>
 
   <script>
     function formatCSV() {
       const input = document.getElementById('inputNumbers').value.trim();
       const chunkSize = parseInt(document.getElementById('chunkSize').value, 10);
-      const outputBox = document.getElementById('outputCSV');
+      const wrapper = document.getElementById('chunksWrapper');
+
+      // Clear previous output
+      wrapper.innerHTML = '';
 
       if (!input || isNaN(chunkSize) || chunkSize <= 0) {
-        outputBox.value = 'Invalid input or chunk size.';
+        wrapper.innerHTML = '<p style="color:red;">Invalid input or chunk size.</p>';
         return;
       }
 
@@ -64,13 +73,20 @@
         .filter(line => line !== '')
         .map(value => `'${value}'`);
 
-      const chunks = [];
       for (let i = 0; i < rows.length; i += chunkSize) {
-        chunks.push(rows.slice(i, i + chunkSize).join(','));
-      }
+        const chunk = rows.slice(i, i + chunkSize).join(',');
 
-      const finalOutput = chunks.join('\nbreak\nbreakline\n');
-      outputBox.value = finalOutput;
+        const label = document.createElement('div');
+        label.className = 'chunk-label';
+        label.textContent = `Chunk ${Math.floor(i / chunkSize) + 1}`;
+
+        const box = document.createElement('textarea');
+        box.readOnly = true;
+        box.value = chunk;
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(box);
+      }
     }
   </script>
 
