@@ -32,6 +32,25 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    #versionLink {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #f2f2f2;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+    #versionLink a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+    #versionLink a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -52,7 +71,9 @@
     <label>Formatted Output:</label>
     <div id="chunksWrapper"></div>
   </div>
-
+  <div id="versionLink">
+    Try FormatterV2 &rarr; <a href="formatterv2.html" target="_blank">Here</a>
+  </div>
   <script>
     function formatCSV() {
       const input = document.getElementById('inputNumbers').value.trim();
