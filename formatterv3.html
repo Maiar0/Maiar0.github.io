@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formatter V3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      font-family: Courier New, monospace;
+      white-space: pre;
+    }
+    input[type="number"], input[type="text"] {
+      width: 150px;
+      margin-left: 10px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    label {
+      font-weight: bold;
+    }
+    .chunk-label {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .active {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .chunk-label {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .control-row {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formatter V3</h1>
+
+  <label for="inputValues">Enter values:</label>
+  <textarea id="inputValues" placeholder="Enter items here..."></textarea>
+
+  <div class="control-row">
+    <label for="chunkSize">Values per chunk:</label>
+    <input type="number" id="chunkSize" value="1000" min="1">
+  </div>
+
+  <div class="control-row">
+    <button id="toggleSurround" onclick="toggleOption('Surround')">Surround</button>
+    <input type="text" id="surroundText" placeholder="e.g. ' or &quot;" />
+
+    <button id="toggleBetween" onclick="toggleOption('Between')">Between</button>
+    <input type="text" id="betweenText" placeholder="e.g. ," />
+
+    <button id="toggleSameLine" onclick="toggleOption('SameLine')">SameLine</button>
+  </div>
+
+  <div class="control-row">
+    <label for="breakMode">Break input on:</label>
+    <select id="breakMode" onchange="updateBreakMode()">
+      <option value="line">Line Break</option>
+      <option value="char">Custom Character</option>
+    </select>
+    <input type="text" id="breakChar" placeholder="e.g. ," maxlength="3" disabled />
+  </div>
+
+  <button onclick="formatInput()">Format</button>
+
+  <div id="outputContainer" style="margin-top: 20px;">
+    <label>Formatted Output:</label>
+    <div id="chunksWrapper"></div>
+  </div>
+
+  <script>
+    const state = {
+      Surround: false,
+      Between: false,
+      SameLine: false
+    };
+
+    function toggleOption(option) {
+      state[option] = !state[option];
+      document.getElementById(`toggle${option}`).classList.toggle('active', state[option]);
+    }
+
+    function updateBreakMode() {
+      const mode = document.getElementById('breakMode').value;
+      document.getElementById('breakChar').disabled = (mode !== 'char');
+    }
+
+    function formatInput() {
+      const input = document.getElementById('inputValues').value.trim();
+      const chunkSize = parseInt(document.getElementById('chunkSize').value, 10);
+      const surroundStr = document.getElementById('surroundText').value;
+      const betweenStr = document.getElementById('betweenText').value;
+      const breakMode = document.getElementById('breakMode').value;
+      const breakChar = document.getElementById('breakChar').value;
+      const wrapper = document.getElementById('chunksWrapper');
+
+      wrapper.innerHTML = ''; // clear previous
+
+      if (!input || isNaN(chunkSize) || chunkSize <= 0) {
+        wrapper.innerHTML = '<p style="color:red;">Invalid input or chunk size.</p>';
+        return;
+      }
+
+      let tokens = [];
+
+      if (breakMode === 'line') {
+        tokens = input.split(/\r?\n/);
+      } else if (breakMode === 'char') {
+        if (!breakChar) {
+          wrapper.innerHTML = '<p style="color:red;">Specify a character to split by.</p>';
+          return;
+        }
+        tokens = input.split(breakChar);
+      }
+
+      tokens = tokens.map(v => v.trim()).filter(v => v !== '');
+
+      // Apply surround if active
+      if (state.Surround && surroundStr) {
+        tokens = tokens.map(v => `${surroundStr}${v}${surroundStr}`);
+      }
+
+      const chunks = [];
+      for (let i = 0; i < tokens.length; i += chunkSize) {
+        const current = tokens.slice(i, i + chunkSize);
+        let formatted = '';
+
+        if (state.SameLine) {
+          formatted = state.Between && betweenStr ? current.join(betweenStr) : current.join('');
+        } else {
+          formatted = state.Between && betweenStr
+            ? current.map(item => `${item}${betweenStr}`).join('\n')
+            : current.join('\n');
+        }
+
+        chunks.push(formatted);
+      }
+
+      // Output
+      chunks.forEach((chunk, i) => {
+        const label = document.createElement('div');
+        label.className = 'chunk-label';
+        label.textContent = `Chunk ${i + 1}`;
+
+        const box = document.createElement('textarea');
+        box.readOnly = true;
+        box.value = chunk;
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(box);
+      });
+    }
+  </script>
+
+</body>
+</html>
