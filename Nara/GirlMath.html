@@ -6,71 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #0f1115;
-      --fg: #e8e8ea;
-      --muted: #a0a4ad;
-      --accent: #4da3ff;
-      --card: #161922;
-      --border: #232836;
+      --bg: #0f1115; --fg: #e8e8ea; --muted: #a0a4ad; --accent: #4da3ff;
+      --card: #161922; --border: #232836;
     }
-    html, body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-    }
+    html, body { margin:0; background:var(--bg); color:var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
     .wrap { max-width: 980px; margin: 32px auto 64px; padding: 0 16px; }
-    h1 { margin: 0 0 12px; font-weight: 700; letter-spacing: .2px; }
-    .sub { color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; }
-    .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 16px; box-shadow: 0 6px 28px rgba(0,0,0,.25);
-    }
+    h1 { margin:0 0 12px; font-weight:700; letter-spacing:.2px; }
+    .sub { color:var(--muted); margin:0 0 20px; font-size:.95rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow:0 6px 28px rgba(0,0,0,.25); }
 
-    /* Grid */
+    /* Grid “table” */
     .grid {
-      display: grid;
+      display:grid;
       grid-template-columns: 1.6fr .9fr .7fr 1.1fr .7fr 1.1fr;
-      gap: 8px 10px; align-items: center;
+      gap:8px 10px; align-items:center;
     }
     .grid .hd {
-      color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em;
-      border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 2px;
-      font-family: "Courier New", ui-monospace, Menlo, Consolas, monospace;
+      color:var(--muted); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em;
+      border-bottom:1px solid var(--border); padding-bottom:6px; margin-bottom:2px;
+      font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace;
     }
-    .row { padding: 6px 0; border-bottom: 1px dashed var(--border); }
-    .unit, .readonly { color: var(--muted); }
-    .readonly { user-select: text; font-family: "Courier New", ui-monospace, Menlo, Consolas, monospace; }
+    .row { padding:6px 0; border-bottom:1px dashed var(--border); }
+    .unit, .readonly { color:var(--muted); }
+    .readonly { user-select:text; font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
     input[type="number"]{
       width:100%; box-sizing:border-box; background:#0c0f16; border:1px solid var(--border);
       color:var(--fg); padding:8px 10px; border-radius:10px; font-size:.95rem;
-      font-family: "Courier New", ui-monospace, Menlo, Consolas, monospace;
+      font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace;
       outline:none;
     }
-    input[type="number"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(77,163,255,.15); }
+    input[type="number"]:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(77,163,255,.15); }
     .actions { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
     button{
-      background: var(--accent); color:#08101c; font-weight:700; border:0; border-radius:12px; padding:10px 16px; cursor:pointer;
-      font-family: "Courier New", ui-monospace, Menlo, Consolas, monospace;
-    }
-    button.secondary{ background:#2b3142; color:var(--fg); }
-    .note { color:var(--muted); font-size:.9rem; margin-top:8px; font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
-    .results { margin-top:18px; display:grid; gap:10px; }
-    .kpi{
-      background:#0c0f16; border:1px solid var(--border); border-radius:14px; padding:12px 14px;
+      background:var(--accent); color:#08101c; font-weight:700; border:0; border-radius:12px; padding:10px 16px; cursor:pointer;
       font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace;
     }
+    button.secondary{ background:#2b3142; color:var(--fg); }
+    .note, .mono { font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
+    .note { color:var(--muted); font-size:.9rem; margin-top:8px; }
+    .results { margin-top:18px; display:grid; gap:10px; }
+    .kpi{ background:#0c0f16; border:1px solid var(--border); border-radius:14px; padding:12px 14px; }
     details { margin-top:6px; }
-    summary { cursor:pointer; color:var(--accent); font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
-    .foot{ margin-top:18px; color:var(--muted); font-size:.9rem; font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
-    .badge{ display:inline-block; padding:2px 8px; border:1px solid var(--border); border-radius:999px; font-size:.8rem; color:var(--muted); }
-    .mono{ font-family:"Courier New", ui-monospace, Menlo, Consolas, monospace; }
+    summary { cursor:pointer; color:var(--accent); }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Bread Calculator</h1>
-    <p class="sub">Usage values are fixed for <b>2 loaves</b>. Edit only <b>Amount</b> and <b>Price</b> (and <b>Time</b> hours/price). Units are fixed.</p>
+    <p class="sub">
+      Usage values are fixed for <b>2 loaves</b>. Edit only the <b>Amount</b> and <b>Price</b> columns.
+      For <b>Time</b>, enter the hours (Usage), how many loaves that time produces (Amount),
+      and your hourly rate ($/hr).
+    </p>
 
     <div class="card">
       <div class="grid">
@@ -109,7 +97,7 @@
         <div class="row unit">oz</div>
         <div class="row"><input type="number" id="p-oil" step="0.01" value="12.98"></div>
 
-        <!-- Butter -->
+        <!-- Butter (optional ingredient already integrated) -->
         <div class="row">Butter</div>
         <div class="row readonly" id="u-butter">1</div>
         <div class="row unit">tablespoon</div>
@@ -117,13 +105,13 @@
         <div class="row unit">tablespoons</div>
         <div class="row"><input type="number" id="p-butter" step="0.01" value="3.67"></div>
 
-        <!-- Time (editable hours and hourly rate) -->
+        <!-- Time (editable: hours, loaves, $/hr) -->
         <div class="row">Time</div>
-        <div class="row"><input type="number" id="u-time" step="0.01" value="1.5"></div>
+        <div class="row"><input type="number" id="u-time-hours" step="0.01" value="1.5"></div>
         <div class="row unit">hr</div>
-        <div class="row"></div>
-        <div class="row unit"></div>
-        <div class="row"><input type="number" id="p-time" step="0.01" value="20" title="Hourly rate ($/hr)"></div>
+        <div class="row"><input type="number" id="a-time-loaves" step="1" value="2"></div>
+        <div class="row unit">loaves</div>
+        <div class="row"><input type="number" id="p-time-rate" step="0.01" value="20" title="Hourly rate ($/hr)"></div>
       </div>
 
       <div class="actions">
@@ -131,138 +119,203 @@
         <button class="secondary" id="reset">Reset to Defaults</button>
       </div>
 
-      <p class="note">Ingredient cost per loaf = Σ(usage per loaf × unit price) × <b>1.10</b> (10% tax noted). Time cost per loaf = (hours per loaf × hourly rate).</p>
+      <p class="note">
+        Ingredient cost per loaf = Σ(usage per loaf × unit price) × <b>1.10</b> (10% tax on ingredients only).<br/>
+        Time cost per loaf = <span class="mono">(hours × $/hr) ÷ loaves_in_that_time</span>.
+      </p>
 
       <div class="results" id="results" hidden>
-        <div class="kpi" id="kpi-loaves"><b>Max loaves:</b> <span class="mono" id="out-loaves"></span> <span class="mono" id="out-limit"></span></div>
-        <div class="kpi" id="kpi-cost-ing"><b>Ingredient cost/loaf (pre-tax):</b> <span class="mono" id="out-cost-pre"></span></div>
-        <div class="kpi" id="kpi-cost-tax"><b>Ingredient cost/loaf (+10% tax):</b> <span class="mono" id="out-cost-tax"></span> <span class="mono">(tax on ingredients only)</span></div>
-        <div class="kpi" id="kpi-time"><b>Time cost/loaf:</b> <span class="mono" id="out-time-per-loaf"></span> <span class="mono" id="out-time-note"></span></div>
-        <div class="kpi" id="kpi-total"><b>Total cost/loaf (ingredients+tax+time):</b> <span class="mono" id="out-total-per-loaf"></span></div>
-        <div class="kpi" id="kpi-hour"><b>All-in cost per hour:</b> <span class="mono" id="out-cost-per-hour"></span></div>
+        <div class="kpi"><b>Max loaves (ingredient-limited):</b> <span class="mono" id="out-loaves"></span> <span class="mono" id="out-limit"></span></div>
+        <div class="kpi"><b>Ingredient cost/loaf (pre-tax):</b> <span class="mono" id="out-cost-pre"></span></div>
+        <div class="kpi"><b>Ingredient cost/loaf (+10% tax):</b> <span class="mono" id="out-cost-tax"></span> <span class="mono">(tax on ingredients only)</span></div>
+        <div class="kpi"><b>Time cost/loaf:</b> <span class="mono" id="out-time-per-loaf"></span> <span class="mono" id="out-time-note"></span></div>
+        <div class="kpi"><b>Total cost/loaf (ingredients+tax+time):</b> <span class="mono" id="out-total-per-loaf"></span></div>
+        <div class="kpi"><b>All-in cost per hour:</b> <span class="mono" id="out-cost-per-hour"></span> <span class="mono" id="out-hour-note"></span></div>
         <details>
           <summary>Per-ingredient breakdown</summary>
           <div id="breakdown" class="mono"></div>
         </details>
       </div>
     </div>
-
-    <p class="foot">
-      Reference: for all-purpose flour only, 1 lb ≈ 3.6–3.75 cups (approx.).
-    </p>
   </div>
 
   <script>
-    // Defaults (usage is for 2 loaves)
-    const defaults = {
+    /* =========================================
+       Defaults (usage is for 2 loaves)
+       ========================================= */
+    const DEFAULTS = {
       flour:  { usage2: 5.5, amount: 90,   unit: "cups",        price: 8.48 },
       yeast:  { usage2: 0.5, amount: 32,   unit: "oz",          price: 5.98 },
       honey:  { usage2: 2.0, amount: 48,   unit: "oz",          price: 7.98 },
       oil:    { usage2: 2.0, amount: 67.6, unit: "oz",          price: 12.98 },
       butter: { usage2: 1.0, amount: 32,   unit: "tablespoons", price: 3.67 },
-      time:   { hours2: 1.5, rate: 20 } // hours per 2 loaves; $/hr
+      time:   { hours: 1.5, loaves: 2, rate: 20 } // hours and loaves refer to the same time block
     };
 
-    function num(sel){ const v = parseFloat(document.querySelector(sel).value); return isFinite(v) ? v : 0; }
-    function money(x){ return "$" + (Math.round(x * 100) / 100).toFixed(2); }
+    /* =========================================
+       Utility helpers (pure, reusable)
+       ========================================= */
+    const U = {
+      num: (sel) => {
+        const v = parseFloat(document.querySelector(sel).value);
+        return Number.isFinite(v) ? v : 0;
+      },
+      money: (x) => "$" + (Math.round(x * 100) / 100).toFixed(2),
+      minBy: (arr, key) => arr.reduce((m, x) => (x[key] < m[key] ? x : m), arr[0]),
+      clampPosInt: (x) => Math.max(0, Math.floor(x || 0)),
+    };
 
+    /* =========================================
+       Calculation utilities (pure functions)
+       ========================================= */
+    const CALC = {
+      unitPrice(price, amount) {
+        return amount > 0 ? price / amount : 0; // $ per unit
+      },
+      usagePerLoaf(usageForTwo) {
+        return usageForTwo / 2;
+      },
+      ingredientCostPerLoaf(usage2, amount, price) {
+        return this.usagePerLoaf(usage2) * this.unitPrice(price, amount);
+      },
+      ingredientLoavesPossible({ amount, usage2 }) {
+        return (amount > 0 && usage2 > 0) ? Math.floor((amount / usage2) * 2) : 0;
+      },
+      limitingLoavesAndName(ings) {
+        // ings: array of {name, amount, usage2}
+        const ratios = ings.map(i => ({ name: i.name, r: (i.amount > 0 && i.usage2 > 0) ? (i.amount / i.usage2) : 0 }));
+        const limiting = U.minBy(ratios, "r");
+        return {
+          name: limiting.name,
+          loaves: U.clampPosInt(limiting.r * 2)
+        };
+      },
+      sum(...xs) { return xs.reduce((a,b)=>a+b,0); },
+
+      // Time cost per loaf using connected inputs
+      timeCostPerLoaf(hours, rate, loavesInThatTime) {
+        if (hours <= 0 || loavesInThatTime <= 0) return 0;
+        return (hours * rate) / loavesInThatTime;
+      },
+
+      // All-in cost per hour using the lesser of (ingredient-limited loaves) and (loaves-in-time)
+      allInCostPerHour({ hours, rate, loavesInTime, ingredientCostPerLoafWithTax, timeCostPerLoaf, ingredientLimitedLoaves }) {
+        if (hours <= 0) return 0;
+        const loavesRealistic = Math.min(ingredientLimitedLoaves, U.clampPosInt(loavesInTime));
+        const totalIngredientCost = ingredientCostPerLoafWithTax * loavesRealistic;
+        const totalTimeCost = timeCostPerLoaf * loavesRealistic; // equals hours*rate if loavesRealistic == loavesInTime
+        return (totalIngredientCost + totalTimeCost) / hours;
+      }
+    };
+
+    /* =========================================
+       Read inputs from the UI
+       ========================================= */
     function readInputs() {
       return {
-        flour:  { usage2: defaults.flour.usage2,  amount: num("#a-flour"),  price: num("#p-flour"),  unit: "cups" },
-        yeast:  { usage2: defaults.yeast.usage2,  amount: num("#a-yeast"),  price: num("#p-yeast"),  unit: "oz" },
-        honey:  { usage2: defaults.honey.usage2,  amount: num("#a-honey"),  price: num("#p-honey"),  unit: "oz" },
-        oil:    { usage2: defaults.oil.usage2,    amount: num("#a-oil"),    price: num("#p-oil"),    unit: "oz" },
-        butter: { usage2: defaults.butter.usage2, amount: num("#a-butter"), price: num("#p-butter"), unit: "tablespoons" },
-        time:   { hours2: num("#u-time"), rate: num("#p-time") } // EDITABLE
+        flour:  { usage2: 5.5, amount: U.num("#a-flour"),  price: U.num("#p-flour"),  unit: "cups" },
+        yeast:  { usage2: 0.5, amount: U.num("#a-yeast"),  price: U.num("#p-yeast"),  unit: "oz" },
+        honey:  { usage2: 2.0, amount: U.num("#a-honey"),  price: U.num("#p-honey"),  unit: "oz" },
+        oil:    { usage2: 2.0, amount: U.num("#a-oil"),    price: U.num("#p-oil"),    unit: "oz" },
+        butter: { usage2: 1.0, amount: U.num("#a-butter"), price: U.num("#p-butter"), unit: "tablespoons" },
+        time:   { hours: U.num("#u-time-hours"), loaves: U.num("#a-time-loaves"), rate: U.num("#p-time-rate") }
       };
     }
 
-    function perLoafCost(usage2, amount, price){
-      if (amount <= 0) return 0;
-      const unitPrice = price / amount;    // $ per unit of that ingredient
-      const perLoafUse = usage2 / 2;       // usage for 1 loaf
-      return perLoafUse * unitPrice;       // $ per loaf
-    }
-
-    function calc() {
+    /* =========================================
+       Main calculation orchestrator
+       ========================================= */
+    function calculateAndRender() {
       const d = readInputs();
 
-      // Capacity: min over ingredients of (amount / usage2), then ×2 loaves per batch.
-      const caps = [
-        { name:"Flour",     r: d.flour.amount  / d.flour.usage2 },
-        { name:"Yeast",     r: d.yeast.amount  / d.yeast.usage2 },
-        { name:"Honey",     r: d.honey.amount  / d.honey.usage2 },
-        { name:"Olive Oil", r: d.oil.amount    / d.oil.usage2 },
-        { name:"Butter",    r: d.butter.amount / d.butter.usage2 }
-      ].sort((a,b)=>a.r-b.r);
-      const limiting = caps[0];
-      const loaves = Math.max(0, Math.floor(limiting.r * 2));
+      // Ingredient capacity (limiting)
+      const limit = CALC.limitingLoavesAndName([
+        { name:"Flour", amount:d.flour.amount, usage2:d.flour.usage2 },
+        { name:"Yeast", amount:d.yeast.amount, usage2:d.yeast.usage2 },
+        { name:"Honey", amount:d.honey.amount, usage2:d.honey.usage2 },
+        { name:"Olive Oil", amount:d.oil.amount, usage2:d.oil.usage2 },
+        { name:"Butter", amount:d.butter.amount, usage2:d.butter.usage2 }
+      ]);
 
-      // Ingredient cost per loaf
-      const cFlour  = perLoafCost(d.flour.usage2,  d.flour.amount,  d.flour.price);
-      const cYeast  = perLoafCost(d.yeast.usage2,  d.yeast.amount,  d.yeast.price);
-      const cHoney  = perLoafCost(d.honey.usage2,  d.honey.amount,  d.honey.price);
-      const cOil    = perLoafCost(d.oil.usage2,    d.oil.amount,    d.oil.price);
-      const cButter = perLoafCost(d.butter.usage2, d.butter.amount, d.butter.price);
-      const ingredientCostPerLoafPreTax = cFlour + cYeast + cHoney + cOil + cButter;
-      const ingredientCostPerLoafWithTax = ingredientCostPerLoafPreTax * 1.10; // +10% tax
+      // Ingredient cost per loaf (pre-tax and with tax)
+      const cFlour  = CALC.ingredientCostPerLoaf(d.flour.usage2,  d.flour.amount,  d.flour.price);
+      const cYeast  = CALC.ingredientCostPerLoaf(d.yeast.usage2,  d.yeast.amount,  d.yeast.price);
+      const cHoney  = CALC.ingredientCostPerLoaf(d.honey.usage2,  d.honey.amount,  d.honey.price);
+      const cOil    = CALC.ingredientCostPerLoaf(d.oil.usage2,    d.oil.amount,    d.oil.price);
+      const cButter = CALC.ingredientCostPerLoaf(d.butter.usage2, d.butter.amount, d.butter.price);
 
-      // Time cost
-      const hoursPerLoaf = d.time.hours2 / 2;    // editable hours for 2 loaves
-      const timeCostPerLoaf = hoursPerLoaf * d.time.rate;
+      const ingredientCostPreTax = CALC.sum(cFlour, cYeast, cHoney, cOil, cButter);
+      const ingredientCostWithTax = ingredientCostPreTax * 1.10; // +10% tax
 
-      // Totals
-      const totalPerLoaf = ingredientCostPerLoafWithTax + timeCostPerLoaf;
+      // Time cost per loaf using connected inputs
+      const timePerLoaf = CALC.timeCostPerLoaf(d.time.hours, d.time.rate, d.time.loaves);
 
-      // For "all-in cost per hour": compute the costs for the limiting batch and divide by total hours for that batch
-      const batchesPossible = limiting.r;             // how many 2-loaf batches we can run
-      const loavesThisBatch = 2 * Math.floor(batchesPossible); // integer batches only for cost/hour context
-      const hoursThisBatch = (d.time.hours2) * Math.floor(batchesPossible);
-      const ingredientCostThisBatch = ingredientCostPerLoafPreTax * loavesThisBatch * 1.10; // ingredients + 10% tax
-      const timeCostThisBatch = d.time.rate * hoursThisBatch;
-      const allInPerHour = hoursThisBatch > 0 ? (ingredientCostThisBatch + timeCostThisBatch) / hoursThisBatch : 0;
+      // Total per loaf
+      const totalPerLoaf = ingredientCostWithTax + timePerLoaf;
+
+      // All-in cost per hour (bounded by both ingredients and “loaves in that time”)
+      const costPerHour = CALC.allInCostPerHour({
+        hours: d.time.hours,
+        rate: d.time.rate,
+        loavesInTime: d.time.loaves,
+        ingredientCostPerLoafWithTax: ingredientCostWithTax,
+        timeCostPerLoaf: timePerLoaf,
+        ingredientLimitedLoaves: limit.loaves
+      });
 
       // Render
       document.getElementById("results").hidden = false;
-      document.getElementById("out-loaves").textContent = String(loaves);
-      document.getElementById("out-limit").textContent  = loaves > 0 ? ` (limited by ${limiting.name})` : "";
+      document.getElementById("out-loaves").textContent = String(limit.loaves);
+      document.getElementById("out-limit").textContent  = limit.loaves > 0 ? ` (limited by ${limit.name})` : "";
 
-      document.getElementById("out-cost-pre").textContent   = money(ingredientCostPerLoafPreTax);
-      document.getElementById("out-cost-tax").textContent   = money(ingredientCostPerLoafWithTax);
-      document.getElementById("out-time-per-loaf").textContent = money(timeCostPerLoaf);
-      document.getElementById("out-time-note").textContent  = `  (hours/loaf: ${(hoursPerLoaf).toFixed(3)} @ ${money(d.time.rate)}/hr)`;
-      document.getElementById("out-total-per-loaf").textContent = money(totalPerLoaf);
-      document.getElementById("out-cost-per-hour").textContent  = money(allInPerHour);
+      document.getElementById("out-cost-pre").textContent   = U.money(ingredientCostPreTax);
+      document.getElementById("out-cost-tax").textContent   = U.money(ingredientCostWithTax);
+      document.getElementById("out-time-per-loaf").textContent = U.money(timePerLoaf);
+      document.getElementById("out-time-note").textContent  =
+        `  [${d.time.hours.toFixed(2)} hr × ${U.money(d.time.rate)}/hr ÷ ${U.clampPosInt(d.time.loaves)} loaf(es)]`;
+      document.getElementById("out-total-per-loaf").textContent = U.money(totalPerLoaf);
+      document.getElementById("out-cost-per-hour").textContent  = U.money(costPerHour);
+      document.getElementById("out-hour-note").textContent =
+        `  [bounded by min(ingredient-limited ${limit.loaves} loaves, time window ${U.clampPosInt(d.time.loaves)} loaves) over ${d.time.hours.toFixed(2)} hr]`;
 
       const bd = [
-        `Flour:   usage/loaf=${(d.flour.usage2/2).toFixed(3)} cup, unit$=${(d.flour.price/d.flour.amount).toFixed(4)}, cost/loaf=${money(cFlour)}`,
-        `Yeast:   usage/loaf=${(d.yeast.usage2/2).toFixed(3)} oz,  unit$=${(d.yeast.price/d.yeast.amount).toFixed(4)}, cost/loaf=${money(cYeast)}`,
-        `Honey:   usage/loaf=${(d.honey.usage2/2).toFixed(3)} oz,  unit$=${(d.honey.price/d.honey.amount).toFixed(4)}, cost/loaf=${money(cHoney)}`,
-        `Oil:     usage/loaf=${(d.oil.usage2/2).toFixed(3)} oz,    unit$=${(d.oil.price/d.oil.amount).toFixed(4)}, cost/loaf=${money(cOil)}`,
-        `Butter:  usage/loaf=${(d.butter.usage2/2).toFixed(3)} tbsp, unit$=${(d.butter.price/d.butter.amount).toFixed(4)}, cost/loaf=${money(cButter)}`,
-        `Time:    hours/loaf=${hoursPerLoaf.toFixed(3)}, rate=${money(d.time.rate)}/hr, cost/loaf=${money(timeCostPerLoaf)}`
+        `Flour:   usage/loaf=${(d.flour.usage2/2).toFixed(3)} cup,  unit$=${(d.flour.price/d.flour.amount).toFixed(4)},  cost/loaf=${U.money(cFlour)}`,
+        `Yeast:   usage/loaf=${(d.yeast.usage2/2).toFixed(3)} oz,   unit$=${(d.yeast.price/d.yeast.amount).toFixed(4)},  cost/loaf=${U.money(cYeast)}`,
+        `Honey:   usage/loaf=${(d.honey.usage2/2).toFixed(3)} oz,   unit$=${(d.honey.price/d.honey.amount).toFixed(4)},  cost/loaf=${U.money(cHoney)}`,
+        `Oil:     usage/loaf=${(d.oil.usage2/2).toFixed(3)} oz,     unit$=${(d.oil.price/d.oil.amount).toFixed(4)},  cost/loaf=${U.money(cOil)}`,
+        `Butter:  usage/loaf=${(d.butter.usage2/2).toFixed(3)} tbsp, unit$=${(d.butter.price/d.butter.amount).toFixed(4)},  cost/loaf=${U.money(cButter)}`,
+        `Time:    hours=${d.time.hours.toFixed(2)}, loaves=${U.clampPosInt(d.time.loaves)}, rate=${U.money(d.time.rate)}/hr, cost/loaf=${U.money(timePerLoaf)}`
       ].join("\n");
       document.getElementById("breakdown").textContent = bd;
     }
 
-    function reset(){
-      document.querySelector("#a-flour").value   = defaults.flour.amount;
-      document.querySelector("#p-flour").value   = defaults.flour.price;
-      document.querySelector("#a-yeast").value   = defaults.yeast.amount;
-      document.querySelector("#p-yeast").value   = defaults.yeast.price;
-      document.querySelector("#a-honey").value   = defaults.honey.amount;
-      document.querySelector("#p-honey").value   = defaults.honey.price;
-      document.querySelector("#a-oil").value     = defaults.oil.amount;
-      document.querySelector("#p-oil").value     = defaults.oil.price;
-      document.querySelector("#a-butter").value  = defaults.butter.amount;
-      document.querySelector("#p-butter").value  = defaults.butter.price;
-      document.querySelector("#u-time").value    = defaults.time.hours2;
-      document.querySelector("#p-time").value    = defaults.time.rate;
-      document.getElementById("results").hidden  = true;
+    /* =========================================
+       Reset to defaults
+       ========================================= */
+    function resetToDefaults() {
+      document.querySelector("#a-flour").value   = DEFAULTS.flour.amount;
+      document.querySelector("#p-flour").value   = DEFAULTS.flour.price;
+      document.querySelector("#a-yeast").value   = DEFAULTS.yeast.amount;
+      document.querySelector("#p-yeast").value   = DEFAULTS.yeast.price;
+      document.querySelector("#a-honey").value   = DEFAULTS.honey.amount;
+      document.querySelector("#p-honey").value   = DEFAULTS.honey.price;
+      document.querySelector("#a-oil").value     = DEFAULTS.oil.amount;
+      document.querySelector("#p-oil").value     = DEFAULTS.oil.price;
+      document.querySelector("#a-butter").value  = DEFAULTS.butter.amount;
+      document.querySelector("#p-butter").value  = DEFAULTS.butter.price;
+
+      document.querySelector("#u-time-hours").value  = DEFAULTS.time.hours;
+      document.querySelector("#a-time-loaves").value = DEFAULTS.time.loaves;
+      document.querySelector("#p-time-rate").value   = DEFAULTS.time.rate;
+
+      document.getElementById("results").hidden = true;
     }
 
-    document.getElementById("calc").addEventListener("click", calc);
-    document.getElementById("reset").addEventListener("click", reset);
+    /* =========================================
+       Wire up UI
+       ========================================= */
+    document.getElementById("calc").addEventListener("click", calculateAndRender);
+    document.getElementById("reset").addEventListener("click", resetToDefaults);
   </script>
 </body>
 </html>
