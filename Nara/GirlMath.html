@@ -147,9 +147,17 @@
         <div class="row unit">oz</div>
         <div class="row"><input type="number" id="p-oil" step="0.01" value="12.98"></div>
 
+        <!-- Butter Oil -->
+        <div class="row">Butter</div>
+        <div class="row readonly" id="u-butter">1</div>
+        <div class="row unit">tablespoon</div>
+        <div class="row"><input type="number" id="a-butter" step="0.01" value="32"></div>
+        <div class="row unit">tablespoon</div>
+        <div class="row"><input type="number" id="p-butter" step="0.01" value="3.67"></div>
+
         <!-- Time (display-only, excluded from ingredient cost) -->
         <div class="row">Time <span class="badge">excluded from ingredient cost</span></div>
-        <div class="row readonly" id="u-time">1.5</div>
+        <div class="row"><input type="number" id="u-time" step="0.01" value="1.5"></div>
         <div class="row unit">hr</div>
         <div class="row"></div>
         <div class="row unit"></div>
@@ -199,6 +207,8 @@
                  amount: num("#a-honey"), price: num("#p-honey"), unit: "oz" },
         oil:   { usage2: defaults.oil.usage2,
                  amount: num("#a-oil"),   price: num("#p-oil"),   unit: "oz" },
+        butter:{ usage2: defaults.butter.usage2,
+                 amount: num("#a-butter"),   price: num("#p-butter"),   unit: "oz" },
         time:  { hours2: defaults.time.hours2, price: num("#p-time") }
       };
     }
@@ -213,7 +223,8 @@
         { name: "Flour", r: d.flour.amount / d.flour.usage2 },
         { name: "Yeast", r: d.yeast.amount / d.yeast.usage2 },
         { name: "Honey", r: d.honey.amount / d.honey.usage2 },
-        { name: "Olive Oil", r: d.oil.amount / d.oil.usage2 }
+        { name: "Olive Oil", r: d.oil.amount / d.oil.usage2 },
+        { name: "Butter", r: d.butter.amount / d.butter.usage2 }
       ];
       caps.sort((a,b)=>a.r-b.r);
       const limiting = caps[0];
@@ -231,7 +242,8 @@
       const cYeast = perLoafCost(d.yeast.usage2, d.yeast.amount, d.yeast.price);
       const cHoney = perLoafCost(d.honey.usage2, d.honey.amount, d.honey.price);
       const cOil   = perLoafCost(d.oil.usage2,   d.oil.amount,   d.oil.price);
-      const costPerLoaf = cFlour + cYeast + cHoney + cOil;
+      const cButter   = perLoafCost(d.butter.usage2,   d.butter.amount,   d.butter.price);
+      const costPerLoaf = cFlour + cYeast + cHoney + cOil + cButter;
 
       const costPerLoafWithTax = costPerLoaf * 1.10; // add 10% tax
 
@@ -249,6 +261,7 @@
         `Yeast:  usage/loaf = ${(d.yeast.usage2/2).toFixed(3)} oz,   unit $ = ${(d.yeast.price/d.yeast.amount).toFixed(4)},  cost/loaf = ${money(cYeast)}`,
         `Honey:  usage/loaf = ${(d.honey.usage2/2).toFixed(3)} oz,   unit $ = ${(d.honey.price/d.honey.amount).toFixed(4)},  cost/loaf = ${money(cHoney)}`,
         `Oil:    usage/loaf = ${(d.oil.usage2/2).toFixed(3)} oz,     unit $ = ${(d.oil.price/d.oil.amount).toFixed(4)},  cost/loaf = ${money(cOil)}`,
+        `Butter: usage/loaf = ${(d.butter.usage2/2).toFixed(3)} oz,     unit $ = ${(d.butter.price/d.butter.amount).toFixed(4)},  cost/loaf = ${money(cButter)}`,
         `— Time shown for visibility (rate entered: ${money(d.time.price)}/session for 2-loaf batch); excluded from ingredient costs.`
       ].join("\n");
       document.getElementById("breakdown").textContent = bd;
